@@ -1,0 +1,22 @@
+{%extends 'games/base.html'%}
+<html>
+<head>
+  <title>{%block title%}Register{%endblock%}</title>
+  {%block statics%}
+  <link rel="stylesheet" type="text/css" href='../static/games/css/register.css'>
+  {%endblock%}
+</head>
+
+<body>
+  {%block body%}
+  <form action=# method="POST" id='registrationForm'> {%csrf_token%}
+  <table>
+    {{form.as_table}}
+  </table>
+  <p><input class='myButton' type='submit' value='Submit'></p>
+</form>
+{%endblock%}
+</body>
+
+
+</html>

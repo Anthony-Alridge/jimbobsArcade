@@ -1,0 +1,27 @@
+{%extends 'games/base.html'%}
+<html>
+<head>
+  <title>{%block title%}Sign In{%endblock%}</title>
+  {%block statics%}
+  <link rel="stylesheet" type="text/css" href='../static/games/css/signIn.css'>
+  {%endblock%}
+</head>
+
+<body>
+  {%block nav%}
+  <a id='signInLink' href="/register">
+    <img id='signInLinkImg' src='../static/games/imgs/loginlink.png'>
+  </a>
+  {%endblock%}
+  {%block body%}
+  <form action=# method="POST" id='signInForm'> {%csrf_token%}
+  <table>
+    {{form.as_table}}
+  </table>
+  <p><input class='myButton' type='submit' value='Submit'></p>
+</form>
+{%endblock%}
+</body>
+
+
+</html>

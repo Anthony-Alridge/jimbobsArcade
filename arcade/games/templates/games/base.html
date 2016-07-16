@@ -1,0 +1,28 @@
+<DOCTYPE html>
+
+  <html>
+    <head>
+
+      <title>{%block title%}{%endblock%}</title>
+      {%load static%}
+      <link rel="shortcut icon" href="{% static 'games/imgs/favicon/favicon.ico' %}" type="image/x-icon">
+      <link rel="stylesheet" type="text/css" href="{%static 'games\css\base.css'%}">
+      {%block statics%}
+      {%endblock%}
+    </head>
+
+    <body>
+      <div id=top_banner>
+        <a href = '\'>
+        <img id='logo' src='../static/games/imgs/logo.png' >
+      </a>
+        <img id='logo-full' src='../static/games/imgs/JA-text.png' >
+        {%block nav%}
+        {%endblock%}
+      </div>
+      <div id=content>
+      {%block body%}
+      {%endblock%}
+      </div>
+    </body>
+  </html>

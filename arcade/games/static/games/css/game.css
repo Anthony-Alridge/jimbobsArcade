@@ -1,0 +1,9 @@
+
+html{
+  overflow: hidden;
+}
+#myCanvas{
+  background: #DDD;
+  display: block;
+  margin:auto;
+}

@@ -1,0 +1,20 @@
+{%extends 'games/base.html'%}
+
+<head>
+  <title>{%block title%}{{js_name}}{%endblock%}</title>
+  {%block statics%}
+  <meta charset='utf-8' />
+  <link rel="stylesheet" type="text/css" href='../static/games/css/game.css'>
+  {%endblock%}
+</head>
+
+<body>
+  {%block nav%}
+  {%endblock%}
+
+  {%block body%}
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+  <script type="text/javascript" src='../static/games/js/gameFiles/{{js_name}}.js'></script>
+  {%endblock%}
+
+</body>

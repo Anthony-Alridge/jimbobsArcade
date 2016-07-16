@@ -1,0 +1,48 @@
+{%extends 'games/base.html'%}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{%block title%}library{%endblock%}</title>
+    {%block statics%}
+    <link rel="stylesheet" type="text/css" href='../static/games/css/library.css'>
+    {%endblock%}
+  </head>
+
+  <body>
+    {%block nav%}
+    <a id='signInLink' href="/signIn">
+      <img id='signInLinkImg' src='../static/games/imgs/loginlink.png'>
+    </a>
+    {%endblock%}
+
+    {%block body%}
+    <div id="search_box">
+    <form method="post" id="game_search">{%csrf_token%}
+      <input id="text_box" type="text" name='query' placeholder="search for games" required>
+      <input id="submit_but" type="submit" value="Submit">
+    </form>
+  </div>
+    <table id="gameInfo">
+    {%if games%}
+    {%for game in games%}
+    <tr id="gameRow">
+    <td id="thumbnail">
+      <a href='/game_{{game.name}}'>
+        <img id=thumbnail src='{{game.thumbnail.url}}' height=100 width=150>
+      </a>
+    </td>
+    <td id="text">
+      <p>Name: {{game.name}}</p>
+      <p>Description: {{game.description}}</p>
+    </td>
+  </tr>
+    {%endfor%}
+    {%else%}
+    <p id = 'no_results'> Sorry, we couldn't find any games matching your query. Try searching
+        for something else. </p>
+    {%endif%}
+  </table>
+    {%endblock%}
+  </body>
+</html>
