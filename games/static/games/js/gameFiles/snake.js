@@ -26,12 +26,7 @@ var foodY = 0;
 var score = 0;
 
 //collison functions
-function intersectRect(r1, r2) {
-  return !(r2.left > r1.right ||
-           r2.right < r1.left ||
-           r2.top > r1.bottom ||
-           r2.bottom < r1.top);
-}
+
 function addBody(){
   tail = snake[snake.length-1];
   if(u){
@@ -48,7 +43,7 @@ function addBody(){
 
   function eatFood(){
     var head = snake[0];
-    if(head.x > foodX && head.x < foodX+gridSize*2 && head.y > foodY && head.y < foodY+gridSize*2){
+    if(head.x + gridSize > foodX && head.x < foodX+(gridSize*2) && head.y + gridSize > foodY && head.y < foodY+(gridSize*2)){
       food = 0;
       score ++;
       addBody();
